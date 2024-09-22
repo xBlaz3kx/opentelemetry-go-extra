@@ -6,7 +6,7 @@ replace github.com/uptrace/opentelemetry-go-extra/otelplay => ../../otelplay
 
 require (
 	github.com/labstack/echo/v4 v4.12.0
-	github.com/uptrace/opentelemetry-go-extra/otelplay v0.3.1
+	github.com/uptrace/opentelemetry-go-extra/otelplay v0.3.2
 	go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho v0.55.0
 	go.opentelemetry.io/otel/trace v1.30.0
 )

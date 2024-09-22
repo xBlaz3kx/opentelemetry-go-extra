@@ -5,7 +5,7 @@ go 1.22
 replace github.com/uptrace/opentelemetry-go-extra/otelplay => ../../otelplay
 
 require (
-	github.com/uptrace/opentelemetry-go-extra/otelplay v0.3.1
+	github.com/uptrace/opentelemetry-go-extra/otelplay v0.3.2
 	go.mongodb.org/mongo-driver v1.17.0
 	go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo v0.55.0
 	go.opentelemetry.io/otel v1.30.0

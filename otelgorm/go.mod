@@ -5,7 +5,7 @@ go 1.22
 replace github.com/uptrace/opentelemetry-go-extra/otelsql => ../otelsql
 
 require (
-	github.com/uptrace/opentelemetry-go-extra/otelsql v0.3.1
+	github.com/uptrace/opentelemetry-go-extra/otelsql v0.3.2
 	go.opentelemetry.io/otel v1.30.0
 	go.opentelemetry.io/otel/trace v1.30.0
 	gorm.io/gorm v1.25.12
