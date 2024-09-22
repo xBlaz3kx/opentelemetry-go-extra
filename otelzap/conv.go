@@ -50,9 +50,12 @@ func appendField(kvs []log.KeyValue, f zapcore.Field) []log.KeyValue {
 		zapcore.UintptrType:
 		return append(kvs, log.Int64(f.Key, f.Integer))
 
-	case zapcore.Float32Type, zapcore.Float64Type:
+	case zapcore.Float64Type:
 		num := math.Float64frombits(uint64(f.Integer))
 		return append(kvs, log.Float64(f.Key, num))
+	case zapcore.Float32Type:
+		num := math.Float32frombits(uint32(f.Integer))
+		return append(kvs, log.Float64(f.Key, float64(num)))
 
 	case zapcore.Complex64Type:
 		str := strconv.FormatComplex(complex128(f.Interface.(complex64)), 'E', -1, 64)
