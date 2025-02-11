@@ -89,3 +89,28 @@ func WithExtraFields(fields ...zapcore.Field) Option {
 		l.extraFields = append(l.extraFields, fields...)
 	}
 }
+
+// WithTraceIDField configures the logger to add `trace_id` field to structured log messages.
+//
+// This option is only useful with backends that don't support OTLP and instead parse log
+// messages to extract structured information.
+func WithTraceIDField(on bool) Option {
+	return func(l *Logger) {
+		l.withTraceID = on
+	}
+}
+
+// WithSpanIDField configures the logger to add `span_id` field to structured log messages.
+//
+// This option is only useful with backends that don't support OTLP and instead parse log
+// messages to extract structured information.
+// Using this option without previously enabling `WithTraceIDField` will enable both WithTraceIDField and WithSpanIDField.
+func WithSpanIDField(on bool) Option {
+	return func(l *Logger) {
+		if on && l.withTraceID != true {
+			l.withTraceID = true
+		}
+
+		l.withSpanID = on
+	}
+}
